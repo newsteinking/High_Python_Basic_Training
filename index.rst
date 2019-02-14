@@ -42,6 +42,7 @@ Python Basic Training
    chapter15
    chapter16
    chapter17
+   chapter18
 
 
 

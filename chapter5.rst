@@ -70,3 +70,28 @@ chapter 5: List
     #Python has a set of built-in methods that you can use on lists.
 
 
+Python Programming Examples on Lists
+------------------------------------------
+
+.. code-block:: python
+
+
+    Python Program to Find the Largest Number in a List
+    Python Program to Find the Second Largest Number in a List
+    Python Program to Put Even and Odd elements in a List into Two Different Lists
+    Python Program to Merge Two Lists and Sort it
+    Python Program to Sort the List According to the Second Element in Sublist
+    Python Program to Find the Second Largest Number in a List Using Bubble Sort
+    Python Program to Sort a List According to the Length of the Elements
+    Python Program to Find the Union of two Lists
+    Python Program to Find the Intersection of Two Lists
+    Python Program to Create a List of Tuples with the First Element as the Number and Second Element as the Square of the Number
+    Python Program to Find all Numbers in a Range which are Perfect Squares and Sum of all Digits in the Number is Less than 10
+    Python Program to Find the Cumulative Sum of a List where the ith Element is the Sum of the First i+1 Elements From The Original List
+    Python Program to Generate Random Numbers from 1 to 20 and Append Them to the List
+    Python program to Sort a List of Tuples in Increasing Order by the Last Element in Each Tuple
+    Python Program to Swap the First and Last Value of a List
+    Python Program to Remove the Duplicate Items from a List
+    Python Program to Read a List of Words and Return the Length of the Longest One
+    Python Program to Remove the ith Occurrence of the Given Word in a List where Words can Repeat
+    Python Program to Remove All Tuples in a List of Tuples with the USN Outside the Given Range

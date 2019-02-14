@@ -40,3 +40,31 @@ chapter 8: Dictionaries
     # note that keywords are not string literals
     # note the use of equals rather than colon for the assignment
     print(dict_with_constructor)
+
+Python Programming Examples on Dictionary
+--------------------------------------------
+
+
+.. code-block:: python
+
+
+    Python Program to Add a Key-Value Pair to the Dictionary
+    Python Program to Concatenate Two Dictionaries Into One
+    Python Program to Check if a Given Key Exists in a Dictionary or Not
+    Python Program to Generate a Dictionary that Contains Numbers (between 1 and n) in the Form (x,x*x).
+    Python Program to Sum All the Items in a Dictionary
+    Python Program to Multiply All the Items in a Dictionary
+    Python Program to Remove the Given Key from a Dictionary
+    Python Program to Form a Dictionary from an Object of a Class
+    Python Program to Map Two Lists into a Dictionary
+    Python Program to Count the Frequency of Words Appearing in a String Using a Dictionary
+    Python Program to Create a Dictionary with Key as First Character and Value as Words Starting with that Character
+    6. Python Programming Examples on Sets
+    Python Program to Count the Number of Vowels Present in a String using Sets
+    Python Program to Check Common Letters in Two Input Strings
+    Python Program that Displays which Letters are in the First String but not in the Second
+    Python Program that Displays which Letters are Present in Both the Strings
+    Python Program that Displays which Letters are in the Two Strings but not in Both
+
+
+

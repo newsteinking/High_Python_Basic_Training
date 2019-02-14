@@ -99,3 +99,31 @@ chapter 3: Strings
     #split()
     a = "Hello, World!"
     print(a.split(",")) # returns ['Hello', ' World!']
+
+
+Python Programming Examples on Strings
+-----------------------------------------
+
+
+.. code-block:: python
+
+    Python Program to Replace all Occurrences of ‘a’ with $ in a String
+    Python Program to Remove the nth Index Character from a Non-Empty String
+    Python Program to Detect if Two Strings are Anagrams
+    Python Program to Form a New String where the First Character and the Last Character have been Exchanged
+    Python Program to Count the Number of Vowels in a String
+    Python Program to Take in a String and Replace Every Blank Space with Hyphen
+    Python Program to Calculate the Length of a String Without Using a Library Function
+    Python Program to Remove the Characters of Odd Index Values in a String
+    Python Program to Calculate the Number of Words and the Number of Characters Present in a String
+    Python Program to Take in Two Strings and Display the Larger String without Using Built-in Functions
+    Python Program to Count Number of Lowercase Characters in a String
+    Python Program to Check if a String is a Palindrome or Not
+    Python Program to Calculate the Number of Upper Case Letters and Lower Case Letters in a String
+    Python Program to Check if a String is a Pangram or Not
+    Python Program to Accept a Hyphen Separated Sequence of Words as Input and Print the Words in a Hyphen-Separated Sequence after Sorting them Alphabetically
+    Python Program to Calculate the Number of Digits and Letters in a String
+    Python Program to Form a New String Made of the First 2 and Last 2 characters From a Given String
+    Python Program to Count the Occurrences of Each Word in a Given String Sentence
+    Python Program to Check if a Substring is Present in a Given String
+

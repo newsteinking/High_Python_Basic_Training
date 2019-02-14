@@ -311,3 +311,19 @@ chapter 13: Object Oriented Programmming
     for department in departments:
         department.showDepartmentData();
 
+
+
+
+Python Programs on Classes and Objects
+---------------------------------------------
+
+.. code-block:: python
+
+
+    Python Program to Find the Area of a Rectangle Using Classes
+    Python Program to Append, Delete and Display Elements of a List Using Classes
+    Python Program to Find the Area of a Rectangle Using Classes
+    Python Program to Create a Class and Compute the Area and the Perimeter of the Circle
+    Python Program to Create a Class which Performs Basic Calculator Operations
+    Python Program to Create a Class in which One Method Accepts a String from the User and Another Prints it
+    Python Program to Create a Class and Get All Possible Subsets from a Set of Distinct Integers
