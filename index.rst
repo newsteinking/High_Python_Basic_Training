@@ -3,9 +3,12 @@ Python Basic Training
 
     Python Basic
 
-      written by sean base on following books
+      written by sean base on following books and site
 
-
+      basic example
+       https://github.com/sudhir-j-sapkal/python-basic-examples
+      basic problem 
+      https://www.sanfoundry.com/python-problems-solutions/
 
 .. image:: ./img/chapter0_4.png
 
