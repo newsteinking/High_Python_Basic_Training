@@ -6,8 +6,11 @@ Python Basic Training
       written by sean base on following books and site
 
       basic example
+
        https://github.com/sudhir-j-sapkal/python-basic-examples
-      basic problem 
+
+      basic problem
+
       https://www.sanfoundry.com/python-problems-solutions/
 
 .. image:: ./img/chapter0_4.png
