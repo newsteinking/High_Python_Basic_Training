@@ -1,70 +1,46 @@
-chapter 8: Dictionaries
+chapter 8: Files
 =========================================
 
-8.1 Dictionaries
+
+8.1 File
 ----------------------------
 
 
 .. code-block:: python
 
 
-    #Create and print a dictionary:
-    my_car_dict = {
-      "brand": "Ford",
-      "model": "Mustang",
-      "year": 1964
-    }
-    print(my_car_dict)
+    f = open("demo.txt", "r")
+    #print(f.read())
 
-    #Accessing Items
-    #You can access the items of a dictionary by referring to its key name, inside square brackets:
-    car_model = my_car_dict["model"]
-    print(car_model)
+    #Read Only Parts of the File
+    #By default the read() method returns the whole text, but you can also specify how many character you want to return:
+
+    #print(f.read(5))
+
+    #Read Lines
+    #You can return one line by using the readline() method:
+    print(f.readline())
 
 
-    #There is also a method called get() that will give you the same result:
-    player_dict = {
-      "cap_id": 101,
-      "name": "Virat",
-      "highest_score": 183
-    }
-    highest_score = player_dict.get("highest_score")
-    print(highest_score)
+    demo.txt
+    Hello! Welcome to demo.txt
+    This file is for testing purposes.
+    Good Luck!
 
-    #You can change the value of a specific item by referring to its key name:
-    player_dict["cap_id"] = 175
-    print(player_dict)
-
-    #The dict() Constructor
-    dict_with_constructor = dict(brand="Ford", model="Mustang", year=1964)
-    # note that keywords are not string literals
-    # note the use of equals rather than colon for the assignment
-    print(dict_with_constructor)
-
-Python Programming Examples on Dictionary
---------------------------------------------
-
+Python Programs on File Handling
+-----------------------------------
 
 .. code-block:: python
 
-
-    Python Program to Add a Key-Value Pair to the Dictionary
-    Python Program to Concatenate Two Dictionaries Into One
-    Python Program to Check if a Given Key Exists in a Dictionary or Not
-    Python Program to Generate a Dictionary that Contains Numbers (between 1 and n) in the Form (x,x*x).
-    Python Program to Sum All the Items in a Dictionary
-    Python Program to Multiply All the Items in a Dictionary
-    Python Program to Remove the Given Key from a Dictionary
-    Python Program to Form a Dictionary from an Object of a Class
-    Python Program to Map Two Lists into a Dictionary
-    Python Program to Count the Frequency of Words Appearing in a String Using a Dictionary
-    Python Program to Create a Dictionary with Key as First Character and Value as Words Starting with that Character
-    6. Python Programming Examples on Sets
-    Python Program to Count the Number of Vowels Present in a String using Sets
-    Python Program to Check Common Letters in Two Input Strings
-    Python Program that Displays which Letters are in the First String but not in the Second
-    Python Program that Displays which Letters are Present in Both the Strings
-    Python Program that Displays which Letters are in the Two Strings but not in Both
-
-
-
+    Python Program to Read the Contents of a File
+    Python Program to Count the Number of Words in a Text File
+    Python Program to Count the Number of Lines in a Text File
+    Python Program to Read a String from the User and Append it into a File
+    Python Program to Count the Occurrences of a Word in a Text File
+    Python Program to Copy the Contents of One File into Another
+    Python Program that Reads a Text File and Counts the Number of Times a Certain Letter Appears in the Text File
+    Python Program to Read a Text File and Print all the Numbers Present in the Text File
+    Python Program to Append the Contents of One File to Another File
+    Python Program to Count the Number of Blank Spaces in a Text File
+    Python Program to Read a File and Capitalize the First Letter of Every Word in the File
+    Python Program to Read the Contents of a File in Reverse Order

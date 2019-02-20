@@ -1,129 +1,72 @@
-chapter 3: Strings
-=====================================
+chapter 3: Operators
+==============================================
 
 
-3.1 basic string
+
+3.1 airthmatic
 ----------------------------
 
 
 .. code-block:: python
 
-    first_name = "Sudhir"
-    last_name = "Sapkal"
 
-    print("My Name Is "+first_name+" "+last_name)
+    x = 5;
+    y = 2;
+    addi  = x+y;
+    subs  = x-y;
+    mult = x*y;
+    div  = x/y;
+    mod  = x%y;
+    expo = x**y;
+    floordiv = x//y;
+    print(f'Add {addi}');
+    print(f'Sub {subs}');
+    print(f'Mult {mult}');
+    print(f'Div {div}');
+    print(f'Mod {mod}');
+    print(f'expo {expo}');
+    print(f'Floor Div {floordiv}');
 
 
-3.2 indexing slicing
+
+
+3.2 special operatorr
 ----------------------------
 
 
 .. code-block:: python
 
-    #Get the character at position 1 (remember that the first character has the position 0):
 
-    #Substring. Get the characters from position 2 to position 5 (not included)
+    #1. Identity Operator
+    x1 = 5
+    y1 = 5
+    x2 = 'Hello'
+    y2 = 'Hello'
+    x3 = [1,2,3]
+    y3 = [1,2,3]
 
+    # Output: False
+    print(x1 is not y1)
 
-    my_name = "Sudhir Sapkal"
+    # Output: True
+    print(x2 is y2)
 
-    #Indexing can be done on String
-    print(my_name[1])
+    # Output: False
+    print(x3 is y3)
 
-    #Slicing can be done on string
-    print(my_name[2:5])
+    #2. Membership operator
+    x = 'Hello world'
+    y = {1:'a',2:'b'}
 
+    # Output: True
+    print('H' in x)
 
+    # Output: True
+    print('hello' not in x)
 
-3.3 input from user
-----------------------------
+    # Output: True
+    print(1 in y)
 
-
-.. code-block:: python
-
-    print("Enter Your Name")
-    name = input()
-    print("Hello, " + name)
-
-3.4 print formating with string
-----------------------------------
-
-
-.. code-block:: python
-
-    print("This is print formating, So I am gonna Insert String here {}".format('INSERTED'));
-
-    #This will be usefull when you wanted to do something like below
-    print("Hey {} Your college {} is Super Awesome !".format('Sudhir',"TKIET"))
-
-    #Here the replacement order can be passed in interpolation
-    print("My Name is {1} {0}".format('Sudhir','Sapkal'))
-
-    #We can also assign a variable names and replace the string accordingly
-
-    print("My Name is {first_name} {last_name}".format(first_name='Sudhir', last_name='Sapkal'))
-
-    #f formatted string litterls
-    name = 'Sudhir'
-    age = 25
-    print(f'{name} is  {age} years old');
-
-
-
-3.5 properties and method of string
-----------------------------------------
-
-
-.. code-block:: python
-
-    #strip()
-    a = " Hello, World! "
-    print(a.strip()) # returns "Hello, World!"
-
-    #len()
-    a = "Hello, World!"
-    print(len(a)) # returns length
-
-    #lower()
-    a = "Hello, World!"
-    print(a.lower()) # makes all string lower case
-
-    #upper()
-    a = "Hello, World!"
-    print(a.upper()) # makes all string upper case
-
-    #replace()
-    a = "Hay Hello, World"
-    print(a.replace("H", "J")) # replaces H with J
-
-    #split()
-    a = "Hello, World!"
-    print(a.split(",")) # returns ['Hello', ' World!']
-
-
-Python Programming Examples on Strings
------------------------------------------
-
-
-.. code-block:: python
-
-    Python Program to Replace all Occurrences of ‘a’ with $ in a String
-    Python Program to Remove the nth Index Character from a Non-Empty String
-    Python Program to Detect if Two Strings are Anagrams
-    Python Program to Form a New String where the First Character and the Last Character have been Exchanged
-    Python Program to Count the Number of Vowels in a String
-    Python Program to Take in a String and Replace Every Blank Space with Hyphen
-    Python Program to Calculate the Length of a String Without Using a Library Function
-    Python Program to Remove the Characters of Odd Index Values in a String
-    Python Program to Calculate the Number of Words and the Number of Characters Present in a String
-    Python Program to Take in Two Strings and Display the Larger String without Using Built-in Functions
-    Python Program to Count Number of Lowercase Characters in a String
-    Python Program to Check if a String is a Palindrome or Not
-    Python Program to Calculate the Number of Upper Case Letters and Lower Case Letters in a String
-    Python Program to Check if a String is a Pangram or Not
-    Python Program to Accept a Hyphen Separated Sequence of Words as Input and Print the Words in a Hyphen-Separated Sequence after Sorting them Alphabetically
-    Python Program to Calculate the Number of Digits and Letters in a String
-    Python Program to Form a New String Made of the First 2 and Last 2 characters From a Given String
-    Python Program to Count the Occurrences of Each Word in a Given String Sentence
-    Python Program to Check if a Substring is Present in a Given String
+    # Output: False
+    print('a' in y)
 

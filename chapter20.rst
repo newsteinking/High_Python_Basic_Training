@@ -1,8 +1,8 @@
-chapter 20: Stack and Queue
+chapter 20: Binary First Search
 ==================================================
 
 
 
-20.1 Stack and Queue
+20.1 Binary First Search
 ----------------------------------------------------
 

@@ -1,8 +1,8 @@
-chapter 21: Depth First Search
+chapter 23: Dijkstra
 ==================================================
 
 
 
-21.1 Depth First Search
+23.1 Dijkstra
 ----------------------------------------------------
 

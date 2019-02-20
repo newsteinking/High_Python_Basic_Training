@@ -1,35 +1,28 @@
-chapter 16: InstaBot
+chapter 16: With Recursion
 ==============================================
 
 
-16.1 instabot
-----------------------------
 
+Python Programs with Recursions
+-----------------------------------------------------
 
 .. code-block:: python
 
-    from selenium import webdriver
-    from selenium.webdriver.common.keys import Keys
-    from time import sleep, strftime
-    from random import randint
-    import pandas as pd
 
-    # Change this to your own chromedriver path!
-    chromedriver_path = ''
-    webdriver = webdriver.Chrome(executable_path=chromedriver_path)
-    sleep(2)
-    webdriver.get('https://www.instagram.com/accounts/login/?source=auth_switcher')
-    sleep(3)
-
-    username = webdriver.find_element_by_name('username')
-    username.send_keys('traveller_sudhir')
-    password = webdriver.find_element_by_name('password')
-    password.send_keys('14aug696')
-
-    button_login = webdriver.find_element_by_css_selector('#react-root > section > main > div > article > div > div:nth-child(1) > div > form > div:nth-child(3) > button')
-    button_login.click()
-    sleep(3)
-
-    notnow = webdriver.find_element_by_css_selector('body > div:nth-child(13) > div > div > div > div.mt3GC > button.aOOlW.HoLwm')
-    notnow.click()
-    #comment these last 2 lines out, if you don't get a pop up asking about notifications
+    Python Program to Determine Whether a Given Number is Even or Odd Recursively
+    Python Program to Determine How Many Times a Given Letter Occurs in a String Recursively
+    Python Program to Find the Fibonacci Series Using Recursion
+    Python Program to Find the Factorial of a Number Using Recursion
+    Python Program to Find the Sum of Elements in a List Recursively
+    Python Program to Find the Binary Equivalent of a Number Recursively
+    Python Program to Find the Sum of the Digits of the Number Recursively
+    Python Program to Find the LCM of Two Numbers Using Recursion
+    Python Program to Find the GCD of Two Numbers Using Recursion
+    Python Program to Find if a Number is Prime or Not Prime Using Recursion
+    Python Program to Find the Product of two Numbers Using Recursion
+    Python Program to Find the Power of a Number Using Recursion
+    Python Program to Check Whether a String is a Palindrome or not Using Recursion
+    Python Program to Reverse a String Using Recursion
+    Python Program to Flatten a Nested List using Recursion
+    Python Program to Find the Total Sum of a Nested List Using Recursion
+    Python Program to Find the Length of a List Using Recursion

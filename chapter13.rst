@@ -1,329 +1,195 @@
-chapter 13: Object Oriented Programmming
+chapter 13: Mysql with Python
 ==============================================
 
 
 
+13.1 demo mysql test
+----------------------------
 
 
-13.1 OOP Basic
+.. code-block:: python
+
+    import mysql.connector
+
+
+13.2 Create Connection
 ----------------------------
 
 
 .. code-block:: python
 
 
-    #Creat Class Example
-    class MyClass:
-      x = 05 #Member of MyClass
-      y = 10 #Member of MyClass
+    import mysql.connector
+
+    mydb = mysql.connector.connect(
+      host="localhost",
+      user="root",
+      passwd="root"
+    )
+
+    print(mydb);
 
 
-    my_class_object = MyClass()
-    print(my_class_object)           #See what happens when you print object
-    print(my_class_object.x)         #This should print x value which is member of MyClass
 
-
-
-13.2 Init method
+13.3 Create Database
 ----------------------------
 
 
 .. code-block:: python
 
-    class Person:
-        def __init__(self, name, age):
-            self.name = name
-            self.age  = age
-           # setAge(age)
+    import mysql.connector
 
-        def setAge(self,age):
-            self.age = age
+    mydb = mysql.connector.connect(
+      host="localhost",
+      user="root",
+      passwd="root"
+    )
 
-    person_dagdu = Person("Dagdu", 40)
-    print(person_dagdu)
-    print("Person Name:" + person_dagdu.name)
-    print("Person Age:" + str(person_dagdu.age))
+    mycursor = mydb.cursor()
+
+    mycursor.execute("CREATE DATABASE mypython_test_db")
 
 
-13.3 BuildIn Class Attributes
---------------------------------
-
-
-.. code-block:: python
-
-    class Person:
-        def __init__(self, name, age):
-          self.name = name
-          self.age = age
-
-
-
-    print "Person.__doc__:", Person.__doc__
-    print "Person.__name__:", Person.__name__
-    print "Person.__module__:", Person.__module__
-    print "Person.__bases__:", Person.__bases__
-    print "Person.__dict__:", Person.__dict__
-
-
-13.4 Class And Object
+13.4 Check DB Exist
 ----------------------------
 
 
 .. code-block:: python
 
-    class Parrot:
+    import mysql.connector
 
-        # class attribute
-        species = "bird"
+    mydb = mysql.connector.connect(
+      host="localhost",
+      user="root",
+      passwd="root"
+    )
 
-        # instance attribute
-        def __init__(self, name, age):
-            self.name = name
-            self.age = age
+    mycursor = mydb.cursor()
+    mycursor.execute("SHOW DATABASES")
 
-    # instantiate the Parrot class
-    blu = Parrot("Blu", 10)
-    woo = Parrot("Woo", 15)
-
-    # access the class attributes
-    print("Blu is a {}".format(blu.__class__.species))
-    print("Woo is also a {}".format(woo.__class__.species))
-
-    # access the instance attributes
-    print("{} is {} years old".format( blu.name, blu.age))
-    print("{} is {} years old".format( woo.name, woo.age))
+    for x in mycursor:
+      print(x)
 
 
-
-13.5 Encapsulation
+13.5 ConnectToDB
 ----------------------------
 
 
 .. code-block:: python
 
-    # 1. Using OOP in Python, we can restrict access to methods and variables.
-    # 2. This prevent data from direct modification which is called encapsulation.
-    # 3. In Python, we denote private attribute using underscore as prefix i.e single "_" or double "__".
-
-    class Computer:
-
-        def __init__(self):
-            self.__maxprice = 900
-
-        def sell(self):
-            print("Selling Price: {}".format(self.__maxprice))
-
-        def setMaxPrice(self, price):
-            self.__maxprice = price
-
-    c = Computer()
-    c.sell()
-
-    # change the price
-    c.__maxprice = 1000
-    c.sell()
-
-    # using setter function
-    c.setMaxPrice(1500)
-    c.sell()
+    import mysql.connector
+    #Create Connection to DB
+    mydb = mysql.connector.connect(
+      host="localhost",
+      user="root",
+      passwd="root",
+      database="mypython_test_db"
+    )
 
 
-
-13.6 Methods
-----------------------------
-
-
-.. code-block:: python
-
-    class Parrot:
-
-        # instance attributes
-        def __init__(self, name, age):
-            self.name = name
-            self.age = age
-
-        # instance method
-        def sing(self, song):
-            return "{} sings {}".format(self.name, song)
-
-        def dance(self):
-            return "{} is now dancing".format(self.name)
-
-    # instantiate the object
-    blu = Parrot("Blu", 10)
-
-    # call our instance methods
-    print(blu.sing("'Happy'"))
-    print(blu.dance())
+    mycursor = mydb.cursor()
+    mycursor.execute("CREATE TABLE employee (name VARCHAR(255), address VARCHAR(255))")
 
 
-13.7 Inheritance
-----------------------------
-
-
-.. code-block:: python
-
-    # parent class
-    class Bird:
-
-        def __init__(self):
-            print("Bird is ready")
-
-        def whoisThis(self):
-            print("Bird")
-
-        def swim(self):
-            print("Swim faster")
-
-    # child class
-    class Penguin(Bird):
-
-        def __init__(self):
-            # call super() function
-            super().__init__()
-            print("Penguin is ready")
-
-        def whoisThis(self):
-            print("Penguin")
-
-        def run(self):
-            print("Run faster")
-
-    peggy = Penguin()
-    peggy.whoisThis()
-    peggy.swim()
-    peggy.run()
-
-    'In the above program, we created two classes i.e. Bird (parent class) and Penguin (child class).
-
-    The child class inherits the functions of parent class. We can see this from swim() method. Again, the child class modified the behavior of parent class. We can see this from whoisThis() method. Furthermore, we extend the functions of parent class, by creating a new run() method.
-
-    Additionally, we use super() function before __init__() method. This is because we want to pull the content of __init__() method from the parent class into the child class.'
-
-
-13.8 Polymorphism
+13.6 Insert
 ----------------------------
 
 
 .. code-block:: python
 
 
-    class Parrot:
+    import mysql.connector
 
-        def fly(self):
-            print("Parrot can fly")
+    mydb = mysql.connector.connect(
+      host="localhost",
+      user="root",
+      passwd="root",
+      database="mypython_test_db"
+    )
 
-        def swim(self):
-            print("Parrot can't swim")
+    mycursor = mydb.cursor()
 
-    class Penguin:
+    sql = "INSERT INTO employee (name, address) VALUES (%s, %s)"
+    val = ("Rohan", "Jhakle")
+    mycursor.execute(sql, val)
 
-        def fly(self):
-            print("Penguin can't fly")
+    mydb.commit()
 
-        def swim(self):
-            print("Penguin can swim")
-
-    # common interface
-    def flying_test(bird):
-        bird.fly()
-
-    #instantiate objects
-    blu = Parrot()
-    peggy = Penguin()
-
-    # passing the object
-    flying_test(blu)
-    flying_test(peggy)
-
-    'In the above program, we defined two classes Parrot and Penguin. Each of them have common method fly() method. However, their functions are different. To allow polymorphism, we created common interface i.e flying_test() function that can take any object. Then, we passed the objects blu and peggy in the flying_test() function, it ran effectively.'
+    print(mycursor.rowcount, "record inserted.")
 
 
-
-13.9 EmplDepthManagement
+13.7 Select
 ----------------------------
 
 
 .. code-block:: python
 
+    import mysql.connector
 
-    class Employee:
-        __id=0
-        __name=""
-        __gender=""
-        __city=""
-        __salary=0
-        __dept_id=0
+    mydb = mysql.connector.connect(
+      host="localhost",
+      user="root",
+      passwd="root",
+      database="mypython_test_db"
+    )
 
-        def setEmployeeData(self):
-            self.__id = int(input("Enter Id:\t"))
-            self.__name = input("Enter Name:\t")
-            self.__gender = input("Enter Gender:\t")
-            self.__city = input("Enter City:\t")
-            self.__salary = int(input("Enter Salary:\t"))
-            self.__dept_id = int(input("Enter Department Id:\t"))
+    mycursor = mydb.cursor()
 
-        def showEmployeeData(self):
-            print("Id\t\t:",self.__id)
-            print("Name\t:", self.__name)
-            print("Gender\t:", self.__gender)
-            print("City\t:", self.__city)
-            print("Salary\t:", self.__salary)
-            print("Department I\t:",self.__dept_id)
+    mycursor.execute("SELECT * FROM employee")
 
+    myresult = mycursor.fetchall()
+    print("**************All Records*******")
+    for x in myresult:
+      print(x)
 
-    employees = list(());
-    #print(employees)
-    print("Enter Employee Details")
-    for i in range(1):
-        #print(i);
-        employee=Employee()
-        employee.setEmployeeData()
-        employees.append(employee)
+    #Where Condition
 
-    for employee in employees:
-        employee.showEmployeeData();
+    sql1 = "SELECT * FROM employee WHERE address ='Pune'"
 
-    class Department:
-        __id=0
-        __name=""
-        __emp_count=0
+    mycursor.execute(sql1)
 
-        def setDepartmentData(self):
-            self.__id = int(input("Enter Id:\t"))
-            self.__name = input("Enter Name:\t")
-            self.__emp_count = int(input("Enter Employee Count:\t"))
+    myresult = mycursor.fetchall()
+    print("***********Records which satisfy where condition ***********")
+    for x in myresult:
+      print(x)
 
-        def showDepartmentData(self):
-            print("Id\t\t:",self.__id)
-            print("Name\t\t:", self.__name)
-            print("Employee Count\t:",self.__emp_count)
+    print("**********Record which have 'a' in name************")
+    sql2 = "SELECT * FROM employee WHERE name LIKE '%ha%'"
 
-    departments = list(());
-    #print(employees)
-    print("\n\n Enter Department Details\n")
-    for i in range(1):
-        #print(i);
-        department=Department()
-        department.setDepartmentData()
-        departments.append(department)
+    mycursor.execute(sql2)
 
-    for department in departments:
-        department.showDepartmentData();
+    myresult = mycursor.fetchall()
 
+    for x in myresult:
+      print(x)
 
+    #Prevent SQL Injection
 
+    print("**********Prevent SQL Injection******************************");
+    sql3 = "SELECT * FROM employee WHERE name = %s"
+    name = ("Salman Khan", )
 
-Python Programs on Classes and Objects
----------------------------------------------
+    mycursor.execute(sql3, name)
 
-.. code-block:: python
+    myresult = mycursor.fetchall()
 
+    for x in myresult:
+      print(x)
 
-    Python Program to Find the Area of a Rectangle Using Classes
-    Python Program to Append, Delete and Display Elements of a List Using Classes
-    Python Program to Find the Area of a Rectangle Using Classes
-    Python Program to Create a Class and Compute the Area and the Perimeter of the Circle
-    Python Program to Create a Class which Performs Basic Calculator Operations
-    Python Program to Create a Class in which One Method Accepts a String from the User and Another Prints it
-    Python Program to Create a Class and Get All Possible Subsets from a Set of Distinct Integers
+    print("********Order By**************");
+    sql4 = "SELECT * FROM employee ORDER BY name"
+    #To have DESC order give DESC after the name in above query
+    mycursor.execute(sql4)
+
+    myresult = mycursor.fetchall()
+
+    for x in myresult:
+      print(x)
+
+    print("**************Delete Record************************")
+    sql5 = "DELETE FROM employee WHERE name = 'Amey Wagh'"
+    mycursor.execute(sql5)
+    mydb.commit()
+    #Notice the statement: mydb.commit(). It is required to make the changes, otherwise no changes are made to the table.
+    #Notice the WHERE clause in the DELETE syntax: The WHERE clause specifies which record(s) that should be deleted. If you omit the WHERE clause, all records will be deleted!
+    print(mycursor.rowcount, "record(s) deleted")

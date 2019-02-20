@@ -1,28 +1,17 @@
-chapter 17: With Recursion
+chapter 17: Without Recursion
 ==============================================
 
 
 
-Python Programs with Recursions
+Python Programs without Recursions
 -----------------------------------------------------
 
 .. code-block:: python
 
-
-    Python Program to Determine Whether a Given Number is Even or Odd Recursively
-    Python Program to Determine How Many Times a Given Letter Occurs in a String Recursively
-    Python Program to Find the Fibonacci Series Using Recursion
-    Python Program to Find the Factorial of a Number Using Recursion
-    Python Program to Find the Sum of Elements in a List Recursively
-    Python Program to Find the Binary Equivalent of a Number Recursively
-    Python Program to Find the Sum of the Digits of the Number Recursively
-    Python Program to Find the LCM of Two Numbers Using Recursion
-    Python Program to Find the GCD of Two Numbers Using Recursion
-    Python Program to Find if a Number is Prime or Not Prime Using Recursion
-    Python Program to Find the Product of two Numbers Using Recursion
-    Python Program to Find the Power of a Number Using Recursion
-    Python Program to Check Whether a String is a Palindrome or not Using Recursion
-    Python Program to Reverse a String Using Recursion
-    Python Program to Flatten a Nested List using Recursion
-    Python Program to Find the Total Sum of a Nested List Using Recursion
-    Python Program to Find the Length of a List Using Recursion
+    Python Program to Find the Fibonacci Series without Using Recursion
+    Python Program to find the factorial of a number without recursion
+    Python Program to Flatten a List without using Recursion
+    Python Program to Reverse a String without using Recursion
+    Python Program to Find the Binary Equivalent of a Number without Using Recursion
+    Python Program to Find All Numbers which are Odd and Palindromes Between a Range of Numbers without using Recursion
+    Python Program to Find the Sum of Digits in a Number without Recursion

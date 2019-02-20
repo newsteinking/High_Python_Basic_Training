@@ -1,143 +1,329 @@
-chapter 12: Method And Functions
-==================================
+chapter 12: Object Oriented Programmming
+==============================================
 
 
 
 
-12.1 args AND kargs
-----------------------------
 
-
-.. code-block:: python
-
-    def myfunc(*args):
-        return sum(args) * 0.05
-
-    print(myfunc(50,60))
-
-    #args - python treats agrs as tuples
-    #args is just name , it can be anything , just make sure it should followed with '*' symbol
-
-    def myfuncforkargs(**kwargs):
-        print(kwargs)
-        if 'fruit' in kwargs:
-            print('My fruit of choice is {}'.format(kwargs['fruit']))
-        else:
-            print('I did not find any fruit here')
-
-    myfuncforkargs(fruit="apple",icecream="butterscotch")
-
-    #kargs - means it is sending the argubments as key word arguments called as dictonories
-
-    #we can use both at same time
-
-    def my_function(*args,**kwargs):
-        print('I would like {} {}'.format(args[0],kwargs['food']))
-
-    my_function(10,20,30,food="eggs",fruit="apple")
-
-
-
-12.2 My Function
+12.1 OOP Basic
 ----------------------------
 
 
 .. code-block:: python
 
 
-    #Example
-    #Creating a function
+    #Creat Class Example
+    class MyClass:
+      x = 05 #Member of MyClass
+      y = 10 #Member of MyClass
 
-    def my_function():
-      print("Hello from a function")
 
-    #Calling a Function
-    my_function()
-
-    #How to send parameters
-    def greetings(name):
-        print("Good Morning, "+name)
-
-    #Calling a greetings function
-    greetings("Vinay")
-
-    #Returning function
-    def addition(num1,num2):
-        return num1+num2;
-
-    #Calling addition function
-    #print("Addition =>"+addition(10,20)) #Will give error
-    result = addition(10,20)
-    print("Addition of 10 and 20 is {}".format(result))
-
-    #Default Parameter Value
-    #The following example shows how to use a default parameter value.
-    #If we call the function without parameter, it uses the default value:
-
-    def substraction(num1=0,num2=0):
-        print(num1-num2)
-
-    substraction(30,20)
-    substraction();
-    substraction(50,50)
+    my_class_object = MyClass()
+    print(my_class_object)           #See what happens when you print object
+    print(my_class_object.x)         #This should print x value which is member of MyClass
 
 
 
-12.3 neted statement And Scope
----------------------------------
+12.2 Init method
+----------------------------
 
 
 .. code-block:: python
 
-    x = 20
-    def printer():
-        x=10
-        return x
+    class Person:
+        def __init__(self, name, age):
+            self.name = name
+            self.age  = age
+           # setAge(age)
 
-    print(x)
+        def setAge(self,age):
+            self.age = age
 
-    #LEGB
-    #1. Local(L): Defined inside function/class
-    #2. Enclosed(E): Defined inside enclosing functions(Nested function concept)
-    #3. Global(G): Defined at the uppermost level
-    #4. Built-in(B): Reserved names in Python builtin modules
+    person_dagdu = Person("Dagdu", 40)
+    print(person_dagdu)
+    print("Person Name:" + person_dagdu.name)
+    print("Person Age:" + str(person_dagdu.age))
 
-    #Globle
-    name = "Global Sudhir"
 
-    def greet():
+12.3 BuildIn Class Attributes
+--------------------------------
 
-        #ENCLOSING
-        name = "Enclosing Sudhir"
 
-        def hello():
-            #LOCAL
-            name = "LOCAL Sudhir"
-            print("Hello "+name)
+.. code-block:: python
 
-        hello()
-
-    greet()
+    class Person:
+        def __init__(self, name, age):
+          self.name = name
+          self.age = age
 
 
 
+    print "Person.__doc__:", Person.__doc__
+    print "Person.__name__:", Person.__name__
+    print "Person.__module__:", Person.__module__
+    print "Person.__bases__:", Person.__bases__
+    print "Person.__dict__:", Person.__dict__
 
 
-12.4 pig latin
+12.4 Class And Object
+----------------------------
+
+
+.. code-block:: python
+
+    class Parrot:
+
+        # class attribute
+        species = "bird"
+
+        # instance attribute
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+
+    # instantiate the Parrot class
+    blu = Parrot("Blu", 10)
+    woo = Parrot("Woo", 15)
+
+    # access the class attributes
+    print("Blu is a {}".format(blu.__class__.species))
+    print("Woo is also a {}".format(woo.__class__.species))
+
+    # access the instance attributes
+    print("{} is {} years old".format( blu.name, blu.age))
+    print("{} is {} years old".format( woo.name, woo.age))
+
+
+
+12.5 Encapsulation
+----------------------------
+
+
+.. code-block:: python
+
+    # 1. Using OOP in Python, we can restrict access to methods and variables.
+    # 2. This prevent data from direct modification which is called encapsulation.
+    # 3. In Python, we denote private attribute using underscore as prefix i.e single "_" or double "__".
+
+    class Computer:
+
+        def __init__(self):
+            self.__maxprice = 900
+
+        def sell(self):
+            print("Selling Price: {}".format(self.__maxprice))
+
+        def setMaxPrice(self, price):
+            self.__maxprice = price
+
+    c = Computer()
+    c.sell()
+
+    # change the price
+    c.__maxprice = 1000
+    c.sell()
+
+    # using setter function
+    c.setMaxPrice(1500)
+    c.sell()
+
+
+
+12.6 Methods
+----------------------------
+
+
+.. code-block:: python
+
+    class Parrot:
+
+        # instance attributes
+        def __init__(self, name, age):
+            self.name = name
+            self.age = age
+
+        # instance method
+        def sing(self, song):
+            return "{} sings {}".format(self.name, song)
+
+        def dance(self):
+            return "{} is now dancing".format(self.name)
+
+    # instantiate the object
+    blu = Parrot("Blu", 10)
+
+    # call our instance methods
+    print(blu.sing("'Happy'"))
+    print(blu.dance())
+
+
+12.7 Inheritance
+----------------------------
+
+
+.. code-block:: python
+
+    # parent class
+    class Bird:
+
+        def __init__(self):
+            print("Bird is ready")
+
+        def whoisThis(self):
+            print("Bird")
+
+        def swim(self):
+            print("Swim faster")
+
+    # child class
+    class Penguin(Bird):
+
+        def __init__(self):
+            # call super() function
+            super().__init__()
+            print("Penguin is ready")
+
+        def whoisThis(self):
+            print("Penguin")
+
+        def run(self):
+            print("Run faster")
+
+    peggy = Penguin()
+    peggy.whoisThis()
+    peggy.swim()
+    peggy.run()
+
+    'In the above program, we created two classes i.e. Bird (parent class) and Penguin (child class).
+
+    The child class inherits the functions of parent class. We can see this from swim() method. Again, the child class modified the behavior of parent class. We can see this from whoisThis() method. Furthermore, we extend the functions of parent class, by creating a new run() method.
+
+    Additionally, we use super() function before __init__() method. This is because we want to pull the content of __init__() method from the parent class into the child class.'
+
+
+12.8 Polymorphism
 ----------------------------
 
 
 .. code-block:: python
 
 
-    def pig_latin(word):
-        first_letter = word[0];
+    class Parrot:
 
-        if first_letter in 'aeiou':
-            pig_word = word + 'ay';
-        else:
-            pig_word = word[1:] + first_letter + 'ey'
+        def fly(self):
+            print("Parrot can fly")
 
-        return pig_word;
+        def swim(self):
+            print("Parrot can't swim")
 
-    print(pig_latin('apple'));
+    class Penguin:
+
+        def fly(self):
+            print("Penguin can't fly")
+
+        def swim(self):
+            print("Penguin can swim")
+
+    # common interface
+    def flying_test(bird):
+        bird.fly()
+
+    #instantiate objects
+    blu = Parrot()
+    peggy = Penguin()
+
+    # passing the object
+    flying_test(blu)
+    flying_test(peggy)
+
+    'In the above program, we defined two classes Parrot and Penguin. Each of them have common method fly() method. However, their functions are different. To allow polymorphism, we created common interface i.e flying_test() function that can take any object. Then, we passed the objects blu and peggy in the flying_test() function, it ran effectively.'
+
+
+
+12.9 EmplDepthManagement
+----------------------------
+
+
+.. code-block:: python
+
+
+    class Employee:
+        __id=0
+        __name=""
+        __gender=""
+        __city=""
+        __salary=0
+        __dept_id=0
+
+        def setEmployeeData(self):
+            self.__id = int(input("Enter Id:\t"))
+            self.__name = input("Enter Name:\t")
+            self.__gender = input("Enter Gender:\t")
+            self.__city = input("Enter City:\t")
+            self.__salary = int(input("Enter Salary:\t"))
+            self.__dept_id = int(input("Enter Department Id:\t"))
+
+        def showEmployeeData(self):
+            print("Id\t\t:",self.__id)
+            print("Name\t:", self.__name)
+            print("Gender\t:", self.__gender)
+            print("City\t:", self.__city)
+            print("Salary\t:", self.__salary)
+            print("Department I\t:",self.__dept_id)
+
+
+    employees = list(());
+    #print(employees)
+    print("Enter Employee Details")
+    for i in range(1):
+        #print(i);
+        employee=Employee()
+        employee.setEmployeeData()
+        employees.append(employee)
+
+    for employee in employees:
+        employee.showEmployeeData();
+
+    class Department:
+        __id=0
+        __name=""
+        __emp_count=0
+
+        def setDepartmentData(self):
+            self.__id = int(input("Enter Id:\t"))
+            self.__name = input("Enter Name:\t")
+            self.__emp_count = int(input("Enter Employee Count:\t"))
+
+        def showDepartmentData(self):
+            print("Id\t\t:",self.__id)
+            print("Name\t\t:", self.__name)
+            print("Employee Count\t:",self.__emp_count)
+
+    departments = list(());
+    #print(employees)
+    print("\n\n Enter Department Details\n")
+    for i in range(1):
+        #print(i);
+        department=Department()
+        department.setDepartmentData()
+        departments.append(department)
+
+    for department in departments:
+        department.showDepartmentData();
+
+
+
+
+Python Programs on Classes and Objects
+---------------------------------------------
+
+.. code-block:: python
+
+
+    Python Program to Find the Area of a Rectangle Using Classes
+    Python Program to Append, Delete and Display Elements of a List Using Classes
+    Python Program to Find the Area of a Rectangle Using Classes
+    Python Program to Create a Class and Compute the Area and the Perimeter of the Circle
+    Python Program to Create a Class which Performs Basic Calculator Operations
+    Python Program to Create a Class in which One Method Accepts a String from the User and Another Prints it
+    Python Program to Create a Class and Get All Possible Subsets from a Set of Distinct Integers

@@ -1,36 +1,86 @@
-Chapter 0: About
-===================================
-
-  Python Basic Curriculm
-
-                        by sean
-   Base on  Python : Beginning Programming with Python
-.. image:: ./img/chapter0_1.png
-
-.. _default_args:
-
-Thanks to
-------------------
-
-.. sourcecode:: pycon
-
-    잠시나마 오픈소스에 대한 희망을 안겨주었던 멤버들에게 감사의 마음을 전합니다.
-    다들 다른곳에서 각자 열심히 일하는데 모두들 건승하길 바랍니다.
-
-
-- sean
-- Mr Ju SS
-- OSS Members
+chapter 0: Variables
+======================================
 
 
 
 
+0.1 Hello world
+----------------------------
+
+
+.. code-block:: python
+
+
+    print('Hello World');
+
+
+0.2 basic variable
+----------------------------
+
+
+.. code-block:: python
+
+
+    my_first_variable="Yeah, It's a variable";
+    print(my_first_variable);
 
 
 
-SEAN's Paradise
-----------------------
 
-I think that My Life as Software Engineer was torrible , but it's role for social is important
-so, I keep going for better life & software development
+0.3 advance variabe
+----------------------------
+
+
+.. code-block:: python
+
+
+    x = 4       # x is of type int here
+    x = "Sally" # x is now of type str here
+    # This is called Dynamic Typing
+    #C++ is Static Typing.
+    print(x)
+    temp = 20
+    ferhnite = 27.3+temp
+    print(f'Far => {ferhnite}');
+
+
+0.4 concate output
+----------------------------
+
+
+.. code-block:: python
+
+
+    my_name = "Sudhir Sapkal";
+    print("Hello "+my_name+",Welcome to Python World!!");
+
+
+Simple Python Programs
+-------------------------------------------------------------
+
+
+.. code-block:: python
+
+
+    Python Program to Calculate the Average of Numbers in a Given List
+    Python Program to Exchange the Values of Two Numbers Without Using a Temporary Variable
+    Python Program to Read a Mumber n and Compute n+nn+nnn
+    Python Program to Reverse a Given Number
+    Python Program to Check Whether a Number is Positive or Negative
+    Python Program to Take in the Marks of 5 Subjects and Display the Grade
+    Python Program to Print all Numbers in a Range Divisible by a Given Number
+    Python Program to Read Two Numbers and Print Their Quotient and Remainder
+    Python Program to Accept Three Digits and Print all Possible Combinations from the Digits
+    Python Program to Print Odd Numbers Within a Given Range
+    Python Program to Find the Sum of Digits in a Number
+    Python Program to Find the Smallest Divisor of an Integer
+    Python Program to Count the Number of Digits in a Number
+    Python Program to Check if a Number is a Palindrome
+    Python Program to Print all Integers that Aren't Divisible by Either 2 or 3 and Lie between 1 and 50.
+    Python Program to Read a Number n And Print the Series "1+2+…..+n= "
+    Python Program to Read a Number n and Print the Natural Numbers Summation Pattern
+    Python Program to Print an Identity Matrix
+    Python Program to Print an Inverted Star Pattern
+    Python Program to Read Print Prime Numbers in a Range using Sieve of Eratosthenes
+
 

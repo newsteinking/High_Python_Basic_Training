@@ -1,108 +1,129 @@
-chapter 2: Data Structure
-=============================================
+chapter 2: Strings
+=====================================
 
 
-2.1 numbers
+2.1 basic string
 ----------------------------
 
 
 .. code-block:: python
 
+    first_name = "Sudhir"
+    last_name = "Sapkal"
 
-    my_int = 20    # int
-    my_float = 45.5  # float
-    my_complex = 20j   # complex
-    #Print the values of the above declared varibales
-    print(my_int)
-    print(my_float)
-    print(my_complex)
-    #Print the Data Types of the above declared variables
-    print(type(my_int))
-    print(type(my_float))
-    print(type(my_complex))
+    print("My Name Is "+first_name+" "+last_name)
 
 
-
-2.2 Int
+2.2 indexing slicing
 ----------------------------
 
 
 .. code-block:: python
 
+    #Get the character at position 1 (remember that the first character has the position 0):
 
-    normal_int   = 10
-    large_int    = 46333666787711
-    negative_int = -25452233
-
-    print(type(normal_int))
-    print(type(large_int))
-    print(type(negativee_int))
+    #Substring. Get the characters from position 2 to position 5 (not included)
 
 
-2.3 Float
+    my_name = "Sudhir Sapkal"
+
+    #Indexing can be done on String
+    print(my_name[1])
+
+    #Slicing can be done on string
+    print(my_name[2:5])
+
+
+
+2.3 input from user
 ----------------------------
 
 
 .. code-block:: python
 
+    print("Enter Your Name")
+    name = input()
+    print("Hello, " + name)
 
-    #Normal Float varibles
-    my_float_1 = 1.10
-    my_float_2 = 1.0
-    my_float_3 = -35.59
+2.4 print formating with string
+----------------------------------
 
-    print(type(my_float_1))
-    print(type(my_float_2))
-    print(type(my_float_3))
-
-    #Float can also be scientific numbers with an "e" to indicate the power of 10.
-
-    my_float_4 = 35e3
-    my_float_5 = 12E4
-    my_float_6 = -87.7e100
-
-    print(type(my_float_4))
-    print(type(my_float_5))
-    print(type(my_float_6))
-
-
-
-
-Python Programming Examples on Mathematical Functions
------------------------------------------------------------
 
 .. code-block:: python
 
-    Python Program to Check if a Date is Valid and Print the Incremented Date if it is
-    Python Program to Compute Simple Interest Given all the Required Values
-    Python Program to Check Whether a Given Year is a Leap Year
-    Python Program to Read Height in Centimeters and then Convert the Height to Feet and Inches
-    Python Program to Take the Temperature in Celcius and Covert it to Farenheit
-    Python Program to Compute Prime Factors of an Integer
-    Python Program to Generate all the Divisors of an Integer
-    Python Program to Print Table of a Given Number
-    Python Program to Print Sum of Negative Numbers, Positive Even Numbers and Positive Odd numbers in a List
-    Python Program to Print Largest Even and Largest Odd Number in a List
-    Python Program to Form an Integer that has the Number of Digits at Ten's Place and the Least Significant Digit of the Entered Integer at One's Place
-    Python Program to Find Those Numbers which are Divisible by 7 and Multiple of 5 in a Given Range of Numbers
-    Python Program to Check if a Number is an Armstrong Number
-    Python Program to Print the Pascal's triangle for n number of rows given by the user
-    Python Program to Check if a Number is a Perfect Number
-    Python Program to Check if a Number is a Strong Number
-    Python Program to Find the LCM of Two Numbers
-    Python Program to Find the GCD of Two Numbers
-    Python Program to Compute a Polynomial Equation given that the Coefficients of the Polynomial are stored in a List
-    Python Program to Check If Two Numbers are Amicable Numbers
-    Python Program to Find the Area of a Triangle Given All Three Sides
-    Python Program to Find the Gravitational Force Acting Between Two Objects
-    Python Program to Check if a Number is a Prime Number
-    Python Program to Print all the Prime Numbers within a Given Range
-    Python Program to Print Numbers in a Range (1,upper) Without Using any Loops
-    Python Program to Find the Sum of Sine Series
-    Python Program to Find the Sum of Cosine Series
-    Python Program to Find the Sum of First N Natural Numbers
-    Python Program to Find the Sum of the Series: 1 + 1/2 + 1/3 + ….. + 1/N
-    Python Program to Find the Sum of the Series: 1 + x^2/2 + x^3/3 + … x^n/n
-    Python Program to Compute the Value of Euler's Number e. Use the Formula: e = 1 + 1/1! + 1/2! + …… 1/n!
-    Python Program to Determine all Pythagorean Triplets in the Range
-    Python Program to Search the Number of Times a Particular Number Occurs in a List
+    print("This is print formating, So I am gonna Insert String here {}".format('INSERTED'));
+
+    #This will be usefull when you wanted to do something like below
+    print("Hey {} Your college {} is Super Awesome !".format('Sudhir',"TKIET"))
+
+    #Here the replacement order can be passed in interpolation
+    print("My Name is {1} {0}".format('Sudhir','Sapkal'))
+
+    #We can also assign a variable names and replace the string accordingly
+
+    print("My Name is {first_name} {last_name}".format(first_name='Sudhir', last_name='Sapkal'))
+
+    #f formatted string litterls
+    name = 'Sudhir'
+    age = 25
+    print(f'{name} is  {age} years old');
+
+
+
+2.5 properties and method of string
+----------------------------------------
+
+
+.. code-block:: python
+
+    #strip()
+    a = " Hello, World! "
+    print(a.strip()) # returns "Hello, World!"
+
+    #len()
+    a = "Hello, World!"
+    print(len(a)) # returns length
+
+    #lower()
+    a = "Hello, World!"
+    print(a.lower()) # makes all string lower case
+
+    #upper()
+    a = "Hello, World!"
+    print(a.upper()) # makes all string upper case
+
+    #replace()
+    a = "Hay Hello, World"
+    print(a.replace("H", "J")) # replaces H with J
+
+    #split()
+    a = "Hello, World!"
+    print(a.split(",")) # returns ['Hello', ' World!']
+
+
+Python Programming Examples on Strings
+-----------------------------------------
+
+
+.. code-block:: python
+
+    Python Program to Replace all Occurrences of ‘a’ with $ in a String
+    Python Program to Remove the nth Index Character from a Non-Empty String
+    Python Program to Detect if Two Strings are Anagrams
+    Python Program to Form a New String where the First Character and the Last Character have been Exchanged
+    Python Program to Count the Number of Vowels in a String
+    Python Program to Take in a String and Replace Every Blank Space with Hyphen
+    Python Program to Calculate the Length of a String Without Using a Library Function
+    Python Program to Remove the Characters of Odd Index Values in a String
+    Python Program to Calculate the Number of Words and the Number of Characters Present in a String
+    Python Program to Take in Two Strings and Display the Larger String without Using Built-in Functions
+    Python Program to Count Number of Lowercase Characters in a String
+    Python Program to Check if a String is a Palindrome or Not
+    Python Program to Calculate the Number of Upper Case Letters and Lower Case Letters in a String
+    Python Program to Check if a String is a Pangram or Not
+    Python Program to Accept a Hyphen Separated Sequence of Words as Input and Print the Words in a Hyphen-Separated Sequence after Sorting them Alphabetically
+    Python Program to Calculate the Number of Digits and Letters in a String
+    Python Program to Form a New String Made of the First 2 and Last 2 characters From a Given String
+    Python Program to Count the Occurrences of Each Word in a Given String Sentence
+    Python Program to Check if a Substring is Present in a Given String
+

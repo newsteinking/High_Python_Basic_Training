@@ -1,60 +1,35 @@
-chapter 15: Flask
+chapter 15: InstaBot
 ==============================================
 
 
-
-15.1 employee Management Via Flask
---------------------------------------
-
-
-.. code-block:: python
-
-    from flask import Flask, jsonify
-
-
-    # Create the application.
-    APP = Flask(__name__)
-
-    @APP.route('/')
-    def myHome():
-        return "My Home";
-
-    @APP.route('/api/employees', methods=['GET'])
-    def getEmployees():
-        employees = [{"emp_id":"1","name":"Sudhir"},{"emp_id":"11","name":"Sudhir1"},{"emp_id":"133","name":"Sudhir23"}]
-        return jsonify({"message":"success", "data":employees})
-
-    @APP.route('/api/employee/<emp_id>', methods=['GET'])
-    def getEmployee(emp_id):
-        emps = [{"emp_id":"1","name":"Sudhir"},{"emp_id":"11","name":"Sudhir1"},{"emp_id":"133","name":"Sudhir23"}]
-        for employee in emps:
-            return employee.name
-            return jsonify({"message":"success","data":employee})
-
-    if __name__ == '__main__':
-        APP.debug=True
-        APP.run()
-
-
-
-
-15.2 Hello flask
+15.1 instabot
 ----------------------------
 
 
 .. code-block:: python
 
-    import flask
+    from selenium import webdriver
+    from selenium.webdriver.common.keys import Keys
+    from time import sleep, strftime
+    from random import randint
+    import pandas as pd
 
+    # Change this to your own chromedriver path!
+    chromedriver_path = ''
+    webdriver = webdriver.Chrome(executable_path=chromedriver_path)
+    sleep(2)
+    webdriver.get('https://www.instagram.com/accounts/login/?source=auth_switcher')
+    sleep(3)
 
-    # Create the application.
-    APP = flask.Flask(__name__)
+    username = webdriver.find_element_by_name('username')
+    username.send_keys('traveller_sudhir')
+    password = webdriver.find_element_by_name('password')
+    password.send_keys('14aug696')
 
-    @APP.route('/')
-    def helloWorld():
-        return "Hello World From Flask Web Framework"
+    button_login = webdriver.find_element_by_css_selector('#react-root > section > main > div > article > div > div:nth-child(1) > div > form > div:nth-child(3) > button')
+    button_login.click()
+    sleep(3)
 
-
-    if __name__ == '__main__':
-        APP.debug=True
-        APP.run()
+    notnow = webdriver.find_element_by_css_selector('body > div:nth-child(13) > div > div > div > div.mt3GC > button.aOOlW.HoLwm')
+    notnow.click()
+    #comment these last 2 lines out, if you don't get a pop up asking about notifications

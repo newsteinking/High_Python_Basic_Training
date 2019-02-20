@@ -1,121 +1,143 @@
-chapter 11: Statements
-====================================
+chapter 11: Method And Functions
+==================================
 
 
 
-11.1 if statement
+
+11.1 args AND kargs
+----------------------------
+
+
+.. code-block:: python
+
+    def myfunc(*args):
+        return sum(args) * 0.05
+
+    print(myfunc(50,60))
+
+    #args - python treats agrs as tuples
+    #args is just name , it can be anything , just make sure it should followed with '*' symbol
+
+    def myfuncforkargs(**kwargs):
+        print(kwargs)
+        if 'fruit' in kwargs:
+            print('My fruit of choice is {}'.format(kwargs['fruit']))
+        else:
+            print('I did not find any fruit here')
+
+    myfuncforkargs(fruit="apple",icecream="butterscotch")
+
+    #kargs - means it is sending the argubments as key word arguments called as dictonories
+
+    #we can use both at same time
+
+    def my_function(*args,**kwargs):
+        print('I would like {} {}'.format(args[0],kwargs['food']))
+
+    my_function(10,20,30,food="eggs",fruit="apple")
+
+
+
+11.2 My Function
 ----------------------------
 
 
 .. code-block:: python
 
 
-    a = 33
-    b = 200
+    #Example
+    #Creating a function
 
-    if b > a:
-      print("b is greater than a")
+    def my_function():
+      print("Hello from a function")
+
+    #Calling a Function
+    my_function()
+
+    #How to send parameters
+    def greetings(name):
+        print("Good Morning, "+name)
+
+    #Calling a greetings function
+    greetings("Vinay")
+
+    #Returning function
+    def addition(num1,num2):
+        return num1+num2;
+
+    #Calling addition function
+    #print("Addition =>"+addition(10,20)) #Will give error
+    result = addition(10,20)
+    print("Addition of 10 and 20 is {}".format(result))
+
+    #Default Parameter Value
+    #The following example shows how to use a default parameter value.
+    #If we call the function without parameter, it uses the default value:
+
+    def substraction(num1=0,num2=0):
+        print(num1-num2)
+
+    substraction(30,20)
+    substraction();
+    substraction(50,50)
 
 
-11.2 elif
-----------------------------
+
+11.3 neted statement And Scope
+---------------------------------
 
 
 .. code-block:: python
 
-    a = 33
-    b = 33
-    if b > a:
-      print("b is greater than a")
-    elif a == b:
-      print("a and b are equal")
+    x = 20
+    def printer():
+        x=10
+        return x
 
-11.3 else
-----------------------------
+    print(x)
 
+    #LEGB
+    #1. Local(L): Defined inside function/class
+    #2. Enclosed(E): Defined inside enclosing functions(Nested function concept)
+    #3. Global(G): Defined at the uppermost level
+    #4. Built-in(B): Reserved names in Python builtin modules
 
-.. code-block:: python
+    #Globle
+    name = "Global Sudhir"
 
-    a = 200
-    b = 33
-    if b > a:
-      print("b is greater than a")
-      print("inside if")
-    elif a == b:
-      print("a and b are equal")
-      print("inside el if");
-    else:
-      print("a is greater than b")
-      print('inside else');
+    def greet():
 
-11.4 loops
-----------------------------
+        #ENCLOSING
+        name = "Enclosing Sudhir"
 
+        def hello():
+            #LOCAL
+            name = "LOCAL Sudhir"
+            print("Hello "+name)
 
-.. code-block:: python
+        hello()
 
-    #Python has two primitive loop commands:
-    # 1.while loops
-    # 2.for loops
-
-    #While - With the while loop we can execute a set of statements as long as a condition is true.
-
-    i = 1
-    while i < 6:
-      print(i)
-      i += 1
-    print("===================================================");
-    #For - A for loop is used for iterating over a sequence (that is either a list, a tuple, a dictionary, a set, or a string)
-    fruits = ["apple", "banana", "cherry"]
-    for fruit in fruits:
-      print(fruit)
-
-    #The range() Function - To loop through a set of code a specified number of times, we can use the range() function,
-    #The range() function returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number.
-    print("====================================================")
-    for i in range(6):
-      print(i)
-
-    #The range() function defaults to 0 as a starting value, however it is possible to specify the starting value by adding a parameter: range(2, 6), which means values from 2 to 6 (but not including 6):
-    print("====================================================")
-    for i in range(2, 6):
-      print(i)
-
-    #The range() function defaults to increment the sequence by 1, however it is possible to specify the increment value by adding a third parameter: range(2, 30, 3):
-    print("=====================================================")
-    for i in range(2, 30, 3):
-      print(i)
-
-    #Else in For Loop
-    #The else keyword in a for loop specifies a block of code to be executed when the loop is finished:
-    print("=====================================================")
-    for i in range(10):
-      print(i)
-    else:
-      print("Finally finished!")
-
-    #Nested Loops
-    #A nested loop is a loop inside a loop.
-    #The "inner loop" will be executed one time for each iteration of the "outer loop":
-    print("======================================================");
-    adj = ["red", "big", "tasty"]
-    fruits = ["apple", "banana", "cherry"]
-
-    for x in adj:
-      for y in fruits:
-        print(x, y)
+    greet()
 
 
 
-11.5 shorthandifelse
+
+
+11.4 pig latin
 ----------------------------
 
 
 .. code-block:: python
 
 
-    #Short Hand If
-    #If you have only one statement to execute, you can put it on the same line as the if statement.
-    a = 200
-    b = 33
-    if a > b: print("a is greater than b")
+    def pig_latin(word):
+        first_letter = word[0];
+
+        if first_letter in 'aeiou':
+            pig_word = word + 'ay';
+        else:
+            pig_word = word[1:] + first_letter + 'ey'
+
+        return pig_word;
+
+    print(pig_latin('apple'));
