@@ -84,3 +84,77 @@ Simple Python Programs
     Python Program to Read Print Prime Numbers in a Range using Sieve of Eratosthenes
 
 
+Vanya and Fence
+-------------------------------------------------------------
+http://codeforces.com/problemset/problem/677/A
+
+친구들이 같이 담 옆을 걸어가고자 한다. 그런데 집주인한테 보이지 않게 하기 위해서
+담보다 큰 친구들은 허리를 굽혀서 걸어가야 한다.
+담보다 작은 친구는 1폭을 걸어간다고 하고 굽혀서 가는 친구들은 0.5폭씩 가야한다고 할때
+친구수와 담 높이가 주어지고 친구들의 키가 주어질때  모든 친구들이 한폭을 갈수 있는 최소 거리는 어떻게 되는가?
+
+inputCopy
+3(사람수) 7(펜수높이)
+4 5 14
+outputCopy
+4
+inputCopy
+6 1
+1 1 1 1 1 1
+outputCopy
+6
+inputCopy
+6 5
+7 6 8 9 10 5
+outputCopy
+11
+
+Input :   n - 사람 수      h - 펜스의 높이
+
+  a_1, a_2 ....a_n - 사람의 키
+
+
+
+Output : 키와 펜스 비교하여 합연산
+
+  키 <= 펜스   : 1
+
+  키  >  펜스   : 2
+
+
+
+예제 해석 :  n = 3, h = 7
+
+       a_1 = 4, a_2 = 5, a_3 = 14
+
+
+
+       4 <= 7 ----------1
+
+       5 <= 7 ----------1
+
+       14 > 7 ----------2
+
+
+
+       따라서
+
+       1,1,2 를 합연산하여 Output은 4가 됩니다.
+
+.. code-block:: python
+
+
+    def cal_road_width(_a, _h):
+        road_width = 0
+        for ai in _a:
+            road_width += 1 if ai <= _h else 2
+
+        return road_width
+
+    n, h = map(int, input("").split())
+    a = list(map(int, input().split()))
+    print(cal_road_width(a, h))
+
+
+Simple Python Programs
+-------------------------------------------------------------
